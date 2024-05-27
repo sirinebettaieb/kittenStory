@@ -1,0 +1,11 @@
+<h2>List of Kittens</h2>
+<div *ngFor="let kitten of kittens" (mouseover)="showDetails(kitten)" (mouseout)="hideDetails()">
+  <h3>{{kitten.name}}</h3>
+  <img [src]="kitten.imageUrl" alt="{{kitten.name}}">
+  <button (click)="adoptKitten(kitten)">Adopt</button>
+</div>
+<div *ngIf="selectedKitten">
+  <h4>Kitten Details:</h4>
+  <p>Name: {{selectedKitten?.name}}</p>
+  <p><img [src]="selectedKitten?.imageUrl" alt="{{selectedKitten?.name}}"></p>
+</div>
